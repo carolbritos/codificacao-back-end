@@ -29,7 +29,7 @@ export class ConvidadosController {
         return this.convidadoService.atualizarIdade(+id, idade);
     }
 
-    @Delete('id')
+    @Delete(':id')
     @HttpCode(204)
     removerConvidado(@Param('id') id:string){
         console.log(`[ADMINISTRADOR] Convidado com ID ${id} removido com Sucesso!`);
