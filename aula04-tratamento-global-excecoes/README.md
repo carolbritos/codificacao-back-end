@@ -1,11 +1,11 @@
 # Aula 04 — Tratamento Global de Exceções
 
-Tecnologia
-JavaScript
-Node.js
-Express
-Tópico
-Tratamento global de exceções em aplicações Node.js com Express.
+- Tecnologia
+- JavaScript
+- Node.js
+- Express
+- Tópico
+- Tratamento global de exceções em aplicações Node.js com Express.
 
 # Objetivo
 
@@ -13,13 +13,13 @@ Implementar mecanismos para identificar e tratar erros de forma centralizada, ev
 
 # Conteúdo
 
-Tratamento de erros síncronos;
-Tratamento de erros assíncronos;
-Middleware global de tratamento de erros;
-Tratamento de uncaughtException;
-Tratamento de unhandledRejection;
-Criação de rotas para simulação de situações de sucesso e erro;
-Retorno de respostas HTTP para os erros identificados.
+- Tratamento de erros síncronos;
+- Tratamento de erros assíncronos;
+- Middleware global de tratamento de erros;
+- Tratamento de uncaughtException;
+- Tratamento de unhandledRejection;
+- Criação de rotas para simulação de situações de sucesso e erro;
+- Retorno de respostas HTTP para os erros identificados.
 
 # Ferramentas
 
@@ -27,7 +27,10 @@ Git e GitHub
 NPM
 Node.js
 Express
-Estrutura do projeto
+
+# Estrutura do projeto
+
+```text
 aula04-tratamento-global-excecoes/
 ├── node_modules/
 ├── package-lock.json
