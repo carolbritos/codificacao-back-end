@@ -36,6 +36,7 @@ aula04-tratamento-global-excecoes/
 ├── package-lock.json
 ├── package.json
 └── server.js
+```
 
 # Rotas
 
