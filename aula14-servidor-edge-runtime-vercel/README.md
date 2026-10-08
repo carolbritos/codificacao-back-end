@@ -17,12 +17,15 @@ aula14-servidor-edge-runtime-vercel/
 ├── .gitignore
 ├── package.json
 └── README.md
+```
+
 ## ⚙️ Tecnologias utilizadas
-Node.js
-TypeScript
-Vercel
-Edge Runtime
-API Serverless
+- Node.js
+- TypeScript
+- Vercel
+- Edge Runtime
+- API Serverless
+
 ## 🚀 Funcionamento
 A aplicação possui uma função localizada em:
 api/hora-servidor.ts
@@ -32,11 +35,13 @@ export const config = {
     runtime: 'edge',
 };
 Dessa forma, a função pode ser executada na infraestrutura de borda da Vercel.
+
 ## 📄 Endpoint
 Durante o desenvolvimento local, a API pode ser acessada através de:
 GET http://localhost:3000/api/hora-servidor
 No ambiente da Vercel, o endpoint seguirá o domínio disponibilizado para o projeto:
 https://seu-projeto.vercel.app/api/hora-servidor
+
 ## 🧩 Código da API
 export const config = {
     runtime: 'edge',
@@ -62,6 +67,7 @@ export default async function handler(req: Request) {
         },
     );
 }
+
 ## 📤 Resposta da API
 Ao realizar uma requisição GET, a API retorna um objeto JSON semelhante a:
 {
@@ -81,6 +87,7 @@ regiao
 Indica a região utilizada durante a execução. No ambiente local, é apresentada como local-dev.
 tempoDeExecucao
 Informa o tempo aproximado necessário para executar a função.
+
 ## 🌐 Edge Runtime
 O Edge Runtime permite que funções sejam executadas em pontos distribuídos da infraestrutura da Vercel, buscando aproximar o processamento do usuário final.
 Isso pode contribuir para a redução da latência em determinadas aplicações.
@@ -88,6 +95,7 @@ Nesta aula, o Edge Runtime é configurado através de:
 export const config = {
     runtime: 'edge',
 };
+
 ## 🧪 Testando a API
 Com o servidor iniciado, a requisição pode ser realizada utilizando uma ferramenta como REST Client, Thunder Client, Insomnia ou diretamente pelo navegador.
 Requisição
@@ -96,20 +104,22 @@ Resultado esperado
 A API deve retornar o status:
 200 OK
 juntamente com os dados em formato JSON.
+
 ## 📌 Conceitos aprendidos
 Nesta aula foram trabalhados os seguintes conceitos:
-APIs Serverless;
-Vercel;
-Edge Runtime;
-Funções executadas na borda da rede;
-Rotas através da pasta api;
-Requisições HTTP GET;
-Objeto Request;
-Objeto Response;
-Respostas em formato JSON;
-Status HTTP;
-Headers HTTP;
-Data e horário utilizando Date;
-Medição do tempo de execução de uma função.
+- APIs Serverless;
+- Vercel;
+- Edge Runtime;
+- Funções executadas na borda da rede;
+- Rotas através da pasta api;
+- Requisições HTTP GET;
+- Objeto Request;
+- Objeto Response;
+- Respostas em formato JSON;
+- Status HTTP;
+- Headers HTTP;
+- Data e horário utilizando Date;
+- Medição do tempo de execução de uma função.
+
 ## 📚 Objetivo da aula
 Compreender como criar uma função de API utilizando o Edge Runtime da Vercel, permitindo que uma aplicação utilize funções serverless executadas na infraestrutura de borda.
