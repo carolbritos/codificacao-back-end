@@ -31,25 +31,24 @@ aula02-modulos-commonjs-esm/
 ├── package.json
 ├── utilitario.js
 └── README.md
+```
+## 🛠️ Tecnologias e ferramentas
 
-🛠️ Tecnologias e ferramentas
+- JavaScript
 
-JavaScript
+- Node.js
 
-Node.js
+- Visual Studio Code
 
-Visual Studio Code
+- Git
 
-Git
+- GitHub
 
-GitHub
+- Módulos ESM
 
-Módulos ESM
+- File System (fs)
 
-File System (fs)
-
-
-📄 Arquivo utilitario.js
+## 📄 Arquivo utilitario.js
 
 Foi criada uma função chamada formatLog, responsável por formatar as mensagens de log.
 
@@ -67,21 +66,21 @@ export function formatLog(mensagem) {
     return (`[${dataAtual} - ${horaAtual}]: ${mensagem}`);
 }
 
-📄 Arquivo index.js
+## 📄 Arquivo index.js
 
 No arquivo index.js foi criada uma função assíncrona para registrar os logs do sistema.
 
 Foram utilizados:
 
-async/await;
+- async/await;
 
-fs;
+- fs;
 
-mkdir;
+- mkdir;
 
-appendFile;
+- appendFile;
 
-try/catch.
+- try/catch.
 
 
 A função cria a pasta de logs, formata a mensagem e adiciona o registro ao arquivo.
@@ -91,7 +90,7 @@ Exemplos de mensagens utilizadas:
 Inicialização do servidor concluída
 Conexão com o banco de dados estabelecida
 
-📝 Registro de logs
+## 📝 Registro de logs
 
 Os registros são armazenados na pasta:
 
@@ -99,18 +98,18 @@ Logs/
 
 O objetivo é manter um histórico das mensagens geradas pelo sistema.
 
-▶️ Execução
+## ▶️ Execução
 
 Para executar o projeto, utilize o terminal dentro da pasta da aula:
 
 node index.js
 
-📌 Aprendizados
+## 📌 Aprendizados
 
 Durante a atividade foram praticados conceitos importantes do desenvolvimento Back-End com Node.js, principalmente a organização do código através de módulos e a utilização do sistema de arquivos para armazenamento de informações.
 
 A atividade também permitiu trabalhar com funções assíncronas e tratamento de erros.
 
-👩‍💻 Autora
+## 👩‍💻 Autora
 
 Maria Caroline de Brito Espíndola
