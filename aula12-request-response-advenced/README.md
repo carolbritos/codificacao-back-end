@@ -20,7 +20,9 @@ aula12-request-response-advenced/
 ├── app.module.ts
 ├── app.service.ts
 └── seguranca.controller.ts
-AppService
+```
+
+## AppService
 O arquivo app.service.ts contém o serviço responsável por fornecer a mensagem de status do servidor.
 import { Injectable } from '@nestjs/common';
 
@@ -50,7 +52,8 @@ export class AppController {
     return this.appService.getHello();
   }
 }
-Rota
+
+## Rota
 GET /status
 Quando essa rota é acessada, o controller chama o método getHello() do AppService.
 Resposta
@@ -81,7 +84,8 @@ export class SegurancaController {
         });
     }
 }
-Rota protegida
+
+## Rota protegida
 GET /secret
 Para acessar a área secreta, é necessário enviar o cabeçalho:
 y-api-key: FULLSTACK-2026
@@ -140,7 +144,8 @@ import { SegurancaController } from './seguranca.controller.js';
   providers: [AppService],
 })
 export class AppModule {}
-Controllers
+
+## Controllers
 Os controllers utilizados pela aplicação são registrados no módulo:
 controllers: [AppController, SegurancaController]
 Dessa forma, o NestJS reconhece:
