@@ -24,7 +24,9 @@ aula10-rotas-dinamicas/
 │   └── jogos.service.ts
 ├── package.json
 └── README.md
-⚙️ Funcionamento
+```
+## ⚙️ Funcionamento
+
 A aplicação possui uma rota para verificar o status do servidor:
 GET /status
 Resposta:
@@ -59,7 +61,9 @@ FromSoftwarw
 5
 God of War
 Santa Monica Studio
-🔀 Rota dinâmica
+
+## 🔀 Rota dinâmica
+
 A rota dinâmica é definida no JogosController:
 @Get(':id')
 buscarPorId(@Param('id', ParseIntPipe) id: string) {
@@ -97,7 +101,9 @@ Como não existe um jogo com ID 10, a API retorna um erro informando que o jogo 
 O ParseIntPipe é utilizado para transformar e validar o parâmetro recebido pela rota:
 @Param('id', ParseIntPipe) id: string
 Isso permite trabalhar com o valor como um número antes de realizar a busca pelo jogo.
-🏗️ Organização da aplicação
+
+## Organização da aplicação
+
 app.controller.ts
 Responsável pela rota de status do servidor:
 @Controller('status')
@@ -139,13 +145,17 @@ Responsável por registrar os Controllers e Services utilizados pela aplicação
   providers: [AppService, JogosService],
 })
 export class AppModule {}
-🚀 Como executar o projeto
+
+## 🚀 Como executar o projeto
+
 Instale as dependências:
 npm install
 Execute o projeto em modo de desenvolvimento:
 npm run start:dev
 O servidor ficará disponível na porta configurada pela aplicação.
-🧪 Testando as rotas
+
+## 🧪 Testando as rotas
+
 Verificar status do servidor
 GET /status
 Buscar Minecraft
@@ -161,14 +171,18 @@ GET /jogos/5
 Testar ID inexistente
 GET /jogos/10
 Nesse caso, será retornado um erro 404 Not Found.
-🛠️ Tecnologias utilizadas
-Node.js
-NestJS
-TypeScript
-JavaScript
-npm
-HTTP
-Git
-GitHub
-🎯 Objetivo da aula
+
+## 🛠️ Tecnologias utilizadas
+
+- Node.js
+- NestJS
+- TypeScript
+- JavaScript
+- npm
+- HTTP
+- Git
+- GitHub
+
+## 🎯 Objetivo da aula
+
 Praticar a criação de rotas dinâmicas no NestJS, utilizando parâmetros de URL, validação com ParseIntPipe, comunicação entre Controller e Service e tratamento de erros com NotFoundException.
