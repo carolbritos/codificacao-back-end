@@ -27,7 +27,10 @@ Na Aula 08 foram criadas as rotas e o DTO para gerenciamento de convidados. Na A
 
 ```bash
 nest new aula-08-09-metodo-get-post-patch-delete
-Estrutura principal
+```
+## Estrutura principal
+
+```text
 aula-08-09-metodo-get-post-patch-delete/
 ├── src/
 │   ├── app.controller.ts
@@ -38,7 +41,9 @@ aula-08-09-metodo-get-post-patch-delete/
 │   └── convidados.service.ts
 ├── package.json
 └── README.md
-Status do servidor
+```
+## Status do servidor
+
 A aplicação possui uma rota para verificar se o servidor está ativo.
 GET /status
 Retorna:
@@ -166,17 +171,17 @@ Execute o projeto em modo de desenvolvimento:
 npm run start:dev
 Por padrão, a aplicação ficará disponível em:
 http://localhost:3000
-Resumo da aula
-O projeto permitiu praticar:
-Criação de uma aplicação NestJS;
-Criação de controllers;
-Criação de services;
-Injeção de dependências;
-Criação de DTO;
-Métodos HTTP GET, POST, PATCH e DELETE;
-Parâmetros de rota;
-Corpo de requisições;
-Códigos de status HTTP;
-Tratamento de exceções;
-Organização básica de uma API REST.
+## Resumo da aula
 
+O projeto permitiu praticar:
+- Criação de uma aplicação NestJS;
+- Criação de controllers;
+- Criação de services;
+- Injeção de dependências;
+- Criação de DTO;
+- Métodos HTTP GET, POST, PATCH e DELETE;
+- Parâmetros de rota;
+- Corpo de requisições;
+- Códigos de status HTTP;
+- Tratamento de exceções;
+- Organização básica de uma API REST.
