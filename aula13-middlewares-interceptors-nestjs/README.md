@@ -25,19 +25,23 @@ aula13-middleware-interceptors-nestjs/
 ├── tsconfig.json
 ├── vitest.config.ts
 └── vitest.config.mts
-🚀 Criação do projeto
+```
+
+## 🚀 Criação do projeto
 O projeto utilizado nesta aula foi:
 aula13-middleware-interceptors-nestjs
 Para criar um Middleware utilizando o NestJS CLI:
 nest g mi logger
-🎯 Objetivos da aula
-Compreender o funcionamento de Middlewares no NestJS.
-Criar um Middleware personalizado.
-Interceptar requisições HTTP antes que elas cheguem ao Controller.
-Registrar informações das requisições no console.
-Implementar uma verificação de privilégio para uma rota administrativa.
-Aplicar um Middleware às rotas da aplicação.
-📌 Controller
+
+## 🎯 Objetivos da aula
+- Compreender o funcionamento de Middlewares no NestJS.
+- Criar um Middleware personalizado.
+- Interceptar requisições HTTP antes que elas cheguem ao Controller.
+- Registrar informações das requisições no console.
+- Implementar uma verificação de privilégio para uma rota administrativa.
+- Aplicar um Middleware às rotas da aplicação.
+
+## 📌 Controller
 O AppController possui duas rotas:
 GET / — rota pública.
 GET /admin — rota administrativa.
@@ -64,7 +68,8 @@ export class AppController {
     };
   }
 }
-Rota pública
+
+## Rota pública
 A rota:
 GET /
 retorna uma mensagem informando que a rota pública foi acessada com sucesso, juntamente com a data e hora da requisição.
@@ -73,7 +78,8 @@ Exemplo:
   "mensagem": "Rota Publica acessada com sucesso!",
   "data": "2026-09-30T00:00:00.000Z"
 }
-Rota administrativa
+
+## Rota administrativa
 A rota:
 GET /admin
 retorna uma mensagem de boas-vindas ao painel administrativo.
@@ -82,7 +88,8 @@ Exemplo:
   "mensagem": "Bem-Vindo ao Painel Administrativo",
   "data": "2026-09-30T00:00:00.000Z"
 }
-🛡️ Middleware
+
+## 🛡️ Middleware
 O Middleware é responsável por executar uma lógica antes que a requisição chegue ao Controller.
 Neste projeto, o Middleware foi utilizado para:
 Registrar o método e a rota acessada.
@@ -120,7 +127,8 @@ export class LoggerMiddleware implements NestMiddleware {
     next();
   }
 }
-🔎 Funcionamento do Middleware
+
+## 🔎 Funcionamento do Middleware
 A cada requisição, o Middleware obtém a URL acessada:
 const currentUrl = req.originalUrl || req.url;
 Em seguida, registra no terminal o método HTTP e a rota:
@@ -141,7 +149,8 @@ Com a mensagem:
 Quando o usuário possui o privilégio necessário, o Middleware executa:
 next();
 Isso permite que a requisição continue para o próximo estágio da aplicação.
-⚙️ Configuração do Middleware
+
+## ⚙️ Configuração do Middleware
 O Middleware precisa ser registrado no módulo da aplicação.
 app.module.ts
 import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
@@ -160,7 +169,8 @@ export class AppModule implements NestModule {
 O trecho:
 consumer.apply(LoggerMiddleware).forRoutes('*');
 faz com que o LoggerMiddleware seja aplicado às rotas da aplicação.
-🧪 Testando as rotas
+
+## 🧪 Testando as rotas
 1. Acessando a rota pública
 Requisição:
 GET /
@@ -195,7 +205,8 @@ Resultado esperado:
   "mensagem": "Bem-Vindo ao Painel Administrativo",
   "data": "data da requisição"
 }
-📚 Conceitos utilizados
+
+## 📚 Conceitos utilizados
 Middleware
 Middleware é uma função executada durante o processamento de uma requisição. Ele pode ser utilizado para tarefas como:
 Logs;
@@ -222,14 +233,15 @@ res
 Representa a resposta HTTP e permite definir o status e o conteúdo retornado ao cliente.
 Exemplo:
 res.status(403).json(...)
-📝 Resumo
+
+## 📝 Resumo
 Nesta aula foi criado um Middleware chamado LoggerMiddleware.
 O Middleware:
-Registra as requisições no terminal;
-Identifica a rota acessada;
-Verifica o acesso à rota /admin;
-Analisa o cabeçalho x-user-base;
-Permite o acesso somente para Administrator;
-Retorna 403 quando o privilégio necessário não é informado;
-Permite que a requisição continue utilizando next().
-O Middleware foi registrado no AppModule e aplicado às rotas da aplicação.
+- Registra as requisições no terminal;
+- Identifica a rota acessada;
+- Verifica o acesso à rota /admin;
+- Analisa o cabeçalho x-user-base;
+- Permite o acesso somente para Administrator;
+- Retorna 403 quando o privilégio necessário não é informado;
+- Permite que a requisição continue utilizando next().
+- O Middleware foi registrado no AppModule e aplicado às rotas da aplicação.
