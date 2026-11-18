@@ -104,5 +104,13 @@ export class AlunosService {
             throw new NotFoundException(`Aluno com ID ${id} não encontrado.`);
         }
         return alunoRemovido;
+    } //!DELETE
+
+    async restore(id: string): Promise <Aluno> {
+        const alunoRestaurado = await this.alunoModel.findByIdAndUpdate(id, { ativo: true }, { new: true }).exec();
+        if (!alunoRestaurado) {
+            throw new NotFoundException(`Aluno  não encontrado pelo ID ${id}`);
+        }
+        return alunoRestaurado;
     }
 }
