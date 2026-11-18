@@ -46,4 +46,5 @@ export class CreateAlunoDto {
         message:'O aluno deve estar matriculado em pelo menos em curso'
     })
     cursos: string[];
+    
 }
